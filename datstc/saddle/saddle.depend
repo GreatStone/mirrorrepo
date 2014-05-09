@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1397616307 source:/home/greatstone/myproject/datstc/saddle/main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+

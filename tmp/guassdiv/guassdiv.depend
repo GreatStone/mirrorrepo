@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1397530860 source:/home/greatstone/myproject/tmp/guassdiv/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+

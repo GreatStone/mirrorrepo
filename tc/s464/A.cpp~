@@ -1,0 +1,12 @@
+class ColorfulBoxesAndBalls{
+public:
+  int getMaximum (int numRed, int numBlue, int onlyRed, int onlyBlue, int bothColors)
+  {
+    int res;
+    if (onlyRed + onlyBlue > bothColors)
+      {
+	res = onlyRed * numRed + onlyBlue * numBlue;
+      }
+    else
+      {
+	if (numRed > numBue)

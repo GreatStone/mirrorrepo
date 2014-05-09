@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1395977777 source:/media/software/CodeWork/datstc/fib/main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+
+1395978386 source:/home/greatstone/myproject/datstc/fib/main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+

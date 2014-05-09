@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1389761191 source:/home/greatstone/myproject/KMP/main.cpp
+	<iostream>
+	<cstring>
+

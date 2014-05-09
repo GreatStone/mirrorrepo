@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1397996904 source:/home/greatstone/myproject/datstc/sparsemartrix/main.cpp
+	<iostream>
+	<cstdio>
+	"martrix.h"
+
+1397996654 /home/greatstone/myproject/datstc/sparsemartrix/martrix.h
+
+1397996931 source:/home/greatstone/myproject/datstc/sparsemartrix/martrix.cpp
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<iostream>
+	<algorithm>
+	"martrix.h"
+

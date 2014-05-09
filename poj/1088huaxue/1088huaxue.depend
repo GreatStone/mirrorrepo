@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1386260768 source:/home/greatstone/myproject/poj/1088huaxue/main.cpp
+	<iostream>
+	"stdio.h"
+	"queue"
+

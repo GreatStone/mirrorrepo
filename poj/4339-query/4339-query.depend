@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1385957174 source:/home/greatstone/myproject/poj/4339-query/main.cpp
+	<iostream>
+	"stdio.h"
+	"string.h"
+

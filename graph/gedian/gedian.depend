@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1396336097 source:/home/greatstone/myproject/graph/gedian/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<vector>
+	<queue>
+

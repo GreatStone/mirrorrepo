@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1385983613 source:/home/greatstone/myproject/CF/52C-Circular-RMQ/main.cpp
+	<iostream>
+	"stdio.h"
+	"string.h"
+

@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1396441755 source:/home/greatstone/myproject/datstc/bank/business.cpp
+	<stdlib.h>
+	"queue.h"
+	"business.h"
+
+1396405677 /home/greatstone/myproject/datstc/bank/queue.h
+
+1396443275 /home/greatstone/myproject/datstc/bank/business.h
+	"queue.h"
+
+1396444015 source:/home/greatstone/myproject/datstc/bank/main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	"business.h"
+	"queue.h"
+
+1396444139 source:/home/greatstone/myproject/datstc/bank/queue.cpp
+	<stdlib.h>
+	<stdio.h>
+	"queue.h"
+

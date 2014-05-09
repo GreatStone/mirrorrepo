@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1385044262 source:/home/greatstone/myproject/poj/1062/main.cpp
+	<iostream>
+	<list>
+	<queue>
+	<math.h>
+	<stdlib.h>
+	"stdio.h"
+

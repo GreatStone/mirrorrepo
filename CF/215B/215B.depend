@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1385481337 source:/home/greatstone/myproject/CF/215B/main.cpp
+	<iostream>
+	"stdio.h"
+	"memory.h"
+	"algorithm"
+

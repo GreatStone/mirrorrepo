@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1386400607 source:/home/greatstone/myproject/CF/217A-Rook, Bishop-and-King/main.cpp
+	<iostream>
+	"stdio.h"
+	"math.h"
+

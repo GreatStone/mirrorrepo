@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1392729890 source:/home/greatstone/myproject/CF/230b/main.cpp
+	<iostream>
+	<cstdio>
+

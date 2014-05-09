@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1394781879 source:d:\codework\datstc\staffinfo\array.cpp
+	"stdio.h"
+	"string.h"
+	"stdlib.h"
+	"Array.h"
+
+1394781381 d:\codework\datstc\staffinfo\array.h
+
+1394781373 source:d:\codework\datstc\staffinfo\main.cpp
+	"stdio.h"
+	"string.h"
+	"Array.h"
+

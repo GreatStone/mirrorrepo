@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1395610983 source:/home/greatstone/myproject/bjtu/lisp/main.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<stack>
+

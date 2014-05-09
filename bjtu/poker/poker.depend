@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1395631865 source:/home/greatstone/myproject/bjtu/poker/main.cpp
+	<iostream>
+	<cstdio>
+

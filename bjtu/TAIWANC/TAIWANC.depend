@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1399187096 source:/home/greatstone/myproject/bjtu/TAIWANC/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<cstdlib>
+	<queue>
+	<list>
+	<stack>
+

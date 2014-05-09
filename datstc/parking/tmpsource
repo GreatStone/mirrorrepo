@@ -1,0 +1,252 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+#include "que.h"
+#include "park.h"
+#include "history.h"
+
+queue wait;
+hisbook record;
+park P;
+
+void menu ()
+{
+    while(1)
+    {
+        printf("1.车辆入库\n2.车辆出库\n3.查看消费记录\n4.退出\n");
+        int command;
+        scanf("%d",&command);
+        char id[20];
+        if (command == 1)
+        {
+            printf("请输入车牌号\n");
+            scanf("%s",id);
+            in(id,&P,&wait);
+        }
+        else if (command == 2)
+        {
+            printf("请输入车牌号\n");
+            scanf("%s",id);
+            out(id,&P,&record,&wait);
+        }
+        else if (command == 3)
+        {
+            printf("请输入车牌号\n");
+            scanf("%s",id);
+            history* tmp = searchId(&record,id);
+            if (tmp != NULL)
+                printHis(tmp);
+            else
+            {
+                printf("error\n");
+            }
+        }
+        else if (command == 4)
+        {
+            break;
+        }
+        else
+        {
+            printf("error\n");
+        }
+    }
+}
+
+int main()
+{
+    init (&wait);
+    bookinit (&record);
+    parkinit(&P);
+    menu();
+    return 0;
+}
+#ifndef HISTORY_H_INCLUDED#define HISTORY_H_INCLUDEDtypedef struct info{    int login;    int charge;    info* ppre;    info* pnext;}info;typedef struct history{    char id[20];    info* head;    info* tail;    int size;
+    history* ppre;
+    history* pnext;}history;typedef struct{    history* head;    history* tail;    int size;}hisbook;
+
+void bookinit (hisbook* book);
+
+void hisinit (history* his);
+void pushinfo (history* his, info* source);void addinfo (hisbook* book, info* source, char* id);history* searchId (hisbook* book, char* id);void printInfo (info* source);void printHis (history* source);#endif // HISTORY_H_INCLUDED#include <stdio.h>#include <string.h>#include <stdlib.h>
+#include <time.h>#include "history.h"
+
+void bookinit (hisbook* book)
+{
+    book->size = 0;
+    book->head = (history*) malloc (sizeof(history));
+    book->tail = (history*) malloc (sizeof(history));
+    book->head->ppre = book->tail->pnext = NULL;
+    book->head->pnext = book->tail;
+    book->tail->ppre = book->head;
+}
+
+void hisinit (history* his)
+{
+    his->size = 0;
+    his->head = (info*) malloc (sizeof(info));
+    his->tail = (info*) malloc (sizeof(info));
+    his->head->ppre = his->tail->pnext = NULL;
+    his->head->pnext = his->tail;
+    his->tail->ppre = his->head;
+}
+void pushinfo (history* his, info* source){    info* tmp = (info*) malloc (sizeof(info));    *tmp = *source;    his->tail->ppre->pnext = tmp;    tmp->ppre = his->tail->ppre;    tmp->pnext = his->tail;    his->tail->ppre = tmp;    his->size++;}void addinfo (hisbook* book, info* source, char* id){    history* aim = searchId(book,id);    if (aim == NULL)    {        aim = (history*) malloc(sizeof (history));
+        hisinit(aim);        strcpy (aim->id,id);        book->tail->ppre->pnext = aim;
+        aim->ppre = book->tail->ppre;
+        aim->pnext = book->tail;
+        book->tail->ppre = aim;
+        book->size++;    }
+    pushinfo(aim,source);}history* searchId (hisbook* book, char* id)
+{
+    int i;
+    history* aim = NULL;
+    history* cur;
+    for (i = 0, cur = book->head->pnext; i < book->size; i++)    {        if (!strcmp(id, cur->id))        {            aim = cur;            break;        }    }
+    return aim;
+
+}void printInfo (info* source)
+{
+    printf("\t进入车库时间: %s\n",ctime((const time_t*)&source->login));
+    printf("\t本次消费金额: %d\n",source->charge);
+}void printHis (history* source)
+{
+    int i;
+    printf("车牌号: %s\n",source->id);
+    info* cur;
+    for (cur = source->head->pnext, i = 1; i <= source->size; i++, cur = cur->pnext)
+    {
+        printf("第%d单消费\n",i);
+        printInfo(cur);
+    }
+}#ifndef PARK_H_INCLUDED
+#define PARK_H_INCLUDED
+#define SIZE 100
+#include "que.h"
+#include "history.h"
+
+typedef struct parknode{
+    char id[20];
+    int login;
+    parknode* ppre;
+    parknode* pnext;
+}parknode;
+
+typedef struct{
+    parknode* tail;
+    parknode* head;
+    int size;
+}park;
+
+void parkinit (park* p);
+
+void parkpush (char* id, park* p, int login);
+
+int parkpop (char* id, park* p, int logout, hisbook* book);
+
+void in (char* id, park* p, queue* que);
+
+void out (char* id, park* p, hisbook* book, queue* que);
+
+#endif // PARK_H_INCLUDED
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include "park.h"
+
+void parkinit (park* p)
+{
+    p->size = 0;
+    p->head = (parknode*) malloc (sizeof(parknode));
+    p->tail = (parknode*) malloc (sizeof(parknode));
+    p->head->ppre = p->tail->pnext = NULL;
+    p->head->pnext = p->tail;
+    p->tail->ppre = p->head;
+}
+
+void parkpush (char* id, park* p, int login)
+{
+    parknode* insert = (parknode*) malloc (sizeof(parknode));
+    strcpy(insert->id,id);
+    insert->login = login;
+    p->tail->ppre->pnext = insert;
+    insert->ppre = p->tail->ppre;
+    p->tail->ppre = insert;
+    insert->pnext = p->tail;
+    p->size++;
+}
+
+int parkpop (char* id, park* p, int logout, hisbook* book)
+{
+    parknode* cur;
+    int i;
+    for (i = 0, cur = p->head->pnext; i < p->size; i++, cur = cur->pnext)
+    {
+        if (!strcmp (id,cur->id))
+        {
+            cur->ppre->pnext = cur->pnext;
+            cur->pnext->ppre = cur->ppre;
+            int x = logout - cur->login;
+            x = x / 60 + (x % 60 != 0);
+            info tmp;
+            tmp.login = cur->login;
+            tmp.charge = x;
+            addinfo(book,&tmp,id);
+            free(cur);
+            p->size--;
+            return x;
+        }
+    }
+    return 0;
+}
+
+void in (char* id, park* p, queue* que)
+{
+    if (p->size == SIZE)
+    {
+        printf("当前车库已满，车辆进入等待队列\n");
+        push(que,id);
+        return;
+    }
+    parkpush(id,p,time(NULL));
+    printf("车辆成功进入\n");
+}
+
+void out (char* id, park* p, hisbook* book, queue* que)
+{
+    int charge;
+    int t = time(NULL);
+    if ((charge = parkpop(id,p,t,book)))
+    {
+        printf ("车辆出库，消费%d元\n",charge);
+        if (que->size)
+        {
+            char tmp[20];
+            pop(que,tmp);
+            in(tmp,p,que);
+        }
+    }
+}
+#ifndef QUE_H_INCLUDE
+#define QUE_H_INCLUDE
+
+typedef struct node{
+    char id[20];
+    node* ppre;
+    node* pnext;
+}node;
+
+typedef struct{
+    node* head;
+    node* tail;
+    int size;
+}queue;
+
+void init (queue* q);
+
+void push (queue* q, char* source);
+
+int pop (queue* q, char*save);
+
+#endif // QUEUE_H_INCLUDED
+#include <stdio.h>#include <string.h>#include <stdlib.h>#include "que.h"/************pop by GreatStone   2014.04.01    note: return strictly when queue is emptyreturn: int (0 fail, id)args:   que* q, int size************/void init (queue* q){    q->head = (node*) malloc (sizeof (node));    q->tail = (node*) malloc (sizeof (node));    q->head->ppre = q->tail->pnext = NULL;    q->head->pnext = q->tail;    q->tail->ppre = q->head;    q->size = 0;}void push (queue* q, char* source){    node* insert = (node*) malloc (sizeof(node));    q->tail->ppre->pnext = insert;    insert->ppre = q->tail->ppre;    q->tail->ppre = insert;    insert->pnext = q->tail;    strcpy(insert->id,source);    q->size++;}int pop (queue* q, char* save){    if (q->size == 0)    {        save[0] = 0;        return 0;    }    else    {        q->tail->ppre = q->tail->ppre->ppre;        strcpy(save,q->tail->ppre->pnext->id);        free(q->tail->ppre->pnext);        q->tail->ppre->pnext = q->tail;    }
+    return 1;}

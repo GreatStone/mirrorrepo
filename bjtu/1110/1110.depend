@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1386426245 source:/home/greatstone/myproject/bjtu/1110/main.cpp
+	<iostream>
+	"stdio.h"
+

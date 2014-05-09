@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1398093621 source:/home/greatstone/myproject/prac/2014-04-21-B/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<algorithm>
+

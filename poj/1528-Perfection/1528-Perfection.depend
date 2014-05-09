@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1388024032 source:/home/greatstone/myproject/poj/1528-Perfection/main.cpp
+	<iostream>
+	"stdio.h"
+

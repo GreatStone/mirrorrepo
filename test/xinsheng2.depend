@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1384002281 source:/home/greatstone/myproject/xinsheng2/main.cpp
+	"stdio.h"
+	"string.h"
+

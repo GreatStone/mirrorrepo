@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1384452011 source:/home/greatstone/myproject/B/main.cpp
+	<iostream>
+	<queue>
+	"stdlib.h"
+	"stdio.h"
+

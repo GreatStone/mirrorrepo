@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1387384494 source:/home/greatstone/myproject/CF/220AInna and Pink Pony/main.cpp
+	"stdio.h"
+	<iostream>
+	<queue>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1394025176 source:/home/greatstone/myproject/qutree/G/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<algorithm>
+	<map>
+

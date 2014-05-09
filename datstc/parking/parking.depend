@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1396570850 source:/home/greatstone/myproject/datstc/parking/main.cpp
+	<iostream>
+	<cstdio>
+	"que.h"
+	"park.h"
+	"history.h"
+
+1396551622 /home/greatstone/myproject/datstc/parking/que.h
+
+1396551535 /home/greatstone/myproject/datstc/parking/park.h
+	"que.h"
+	"history.h"
+
+1396549419 /home/greatstone/myproject/datstc/parking/history.h
+
+1396551545 source:/home/greatstone/myproject/datstc/parking/park.cpp
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	"park.h"
+
+1396551577 source:/home/greatstone/myproject/datstc/parking/que.cpp
+	<stdio.h>
+
+1396549541 source:/home/greatstone/myproject/datstc/parking/history.cpp
+	<stdio.h>
+	<time.h>
+

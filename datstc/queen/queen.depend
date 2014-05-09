@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1396570170 source:/home/greatstone/myproject/datstc/queen/main.cpp
+	<iostream>
+	<stdio.h>
+	<string.h>
+

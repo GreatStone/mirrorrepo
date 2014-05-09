@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1394781465 source:d:\codework\datstc\josephus\joselist.cpp
+	"stdlib.h"
+	"JoseList.h"
+
+1394781471 d:\codework\datstc\josephus\joselist.h
+
+1394781462 source:d:\codework\datstc\josephus\main.cpp
+	"stdio.h"
+	"string.h"
+	"JoseList.h"
+

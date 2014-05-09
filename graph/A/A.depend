@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1396229604 source:/home/greatstone/myproject/graph/A/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<cstdlib>
+	<vector>
+	<queue>
+

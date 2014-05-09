@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1399211899 source:/home/greatstone/myproject/bjtu/TAIWANC2/main.cpp
+	<iostream>
+	<cstdio>
+	<cstring>
+	<cstdlib>
+	<string>
+	<map>
+

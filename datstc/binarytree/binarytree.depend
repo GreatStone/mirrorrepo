@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1399137469 source:/home/greatstone/myproject/datstc/binarytree/binarytree.cpp
+	<cstdio>
+	<cstring>
+	<cstdlib>
+	"binarytree.h"
+	"stack.h"
+	"queue.h"
+
+1399136725 /home/greatstone/myproject/datstc/binarytree/binarytree.h
+
+1399125806 /home/greatstone/myproject/datstc/binarytree/stack.h
+	"binarytree.h"
+
+1399137100 source:/home/greatstone/myproject/datstc/binarytree/main.cpp
+	"stdio.h"
+	"stdlib.h"
+	"string.h"
+	"binarytree.h"
+	"stack.h"
+
+1399131509 source:/home/greatstone/myproject/datstc/binarytree/stack.cpp
+	"stack.h"
+	"stdio.h"
+	"string.h"
+	"stdlib.h"
+
+1399136328 /home/greatstone/myproject/datstc/binarytree/queue.h
+	"binarytree.h"
+
+1399137167 source:/home/greatstone/myproject/datstc/binarytree/queue.cpp
+	"stdio.h"
+	"binarytree.h"
+	"queue.h"
+	"stdlib.h"
+
